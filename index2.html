@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Iceberg&family=Wallpoet&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(#000, #1C282F, #000);
+            font-family: 'Iceberg', cursive;
+        }
+
+        .cube {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: animate 6.5s linear infinite;
+        }
+        
+        @keyframes animate {
+            0%, 100% {
+                transform: rotateX(-30deg) rotateY(0deg);
+            }
+            50% {
+                transform: rotateX(-30deg) rotateY(180deg);
+            }
+            100% {
+                transform: rotateX(-30deg) rotateY(360deg);
+            }
+        }
+        
+        .cube div {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-style: preserve-3d;
+        }
+
+        .cube div span {
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-style: preserve-3d;
+            transform: rotateY(calc(90deg * var(--i))) translateZ(75px);
+            background: #000000dd;
+            font-size: 1.5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: color-anim 3s linear infinite;
+            border: #4CA4FF;
+            border-style: solid;
+            border-width: 1px;
+            box-shadow: 0px 0px 10px #ffffff, 0px 0px 20px #0088ff, 0px 0px 25px #00ffff;    
+         }
+        
+        @keyframes color-anim {
+            0%, 50%, 65% {
+                color: #1F282B;
+                text-shadow: 0px 0px 0.2px #fff, 0px 0px 0.4px #08f, 0px 0px 0.8px #0ff;
+            }
+            25%, 60%, 100% {
+                color: #BDEEFF;
+                text-shadow: 0px 0px 4px #fff, 0px 0px 8px #08f, 0px 0px 10px #0ff;
+            }
+        }
+        
+        .top {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+            transform: rotateX(90deg) translateZ(75px);
+            background: #000000dd;
+            box-shadow: 0px 0px 10px #ffffff, 0px 0px 20px #0088ff, 0px 0px 25px #00ffff;                                   
+            color: #333;
+            animation: color-anim 3s linear infinite;
+        }
+        
+        .bottom {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+            transform: rotateX(90deg) translateZ(75px);
+            background: #000000dd;
+            box-shadow: 0px 0px 10px #ffffff, 0px 0px 20px #0088ff, 0px 0px 25px #00ffff;                                   
+            color: #333;
+            transform: rotateX(90deg) translateZ(-75px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cube">
+        <div class="top">&lt;DEV/&gt;</div>
+        <div>
+            <span style="--i: 0;">Raffa064<br>Java</span>
+            <span style="--i: 1;">Raffa064<br>Javascript</span>
+            <span style="--i: 2;">Raffa064<br>HTML5</span>
+            <span style="--i: 3;">Raffa064<br>CSS3</span>
+        </div>
+        <div class="bottom"></div>
+    </div>
+</body>
+
+</html>
